@@ -1,0 +1,22 @@
+{% load static %} {% load socialaccount %} {% providers_media_js %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type='text/css' rel='stylesheet' href='{% static "css/login.css" %}' />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Translate Language</title>
+</head>
+
+<body>
+    <div class='font2'>
+        <h1>Sign In With</h1>
+        <div class='font1'>
+            <a href="{% provider_login_url 'google' %}"><i class="fab fa-google-plus font"></i></a>
+            <a href="{% provider_login_url 'facebook' method='js_sdk' %}"><i class="fab fa-facebook font"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>

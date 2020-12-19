@@ -1,0 +1,29 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type='text/css' rel='stylesheet' href='{% static "css/style.css" %}' />
+    <title>Translate Language</title>
+</head>
+
+<body>
+    <form method='post' action='{% url "translate" %}'>
+        {% csrf_token %}
+        <h1 data-text='Translate Eng To German'>Translate Eng To German</h1>
+        <div class='btn1' id='btn12'></div>
+        <textarea id='text1' class='text1 text' placeholder="Enter Your Text or Words" name='txt1'></textarea>
+        <input type="submit" value='Translate' class='btn' />
+        <div class='text2 text'>{{datas}}</div>
+    </form>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js'>
+    </script>
+    <script>
+        $('#btn12').click(function() {
+            $('#text1').slideToggle(2000);
+        });
+    </script>
+</body>
+
+</html>

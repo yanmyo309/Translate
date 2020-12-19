@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-image: linear-gradient(to top left, gray, black, brown);
+}
+
+form {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text {
+    margin: 50px 0;
+    border-radius: 10px;
+    padding: 10px 10px;
+    background-image: linear-gradient(to top left, black, gray, black);
+    box-shadow: 10px 10px 5px black;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+    color: burlywood;
+}
+
+@media (min-width:1028px) {
+    .text {
+        width: 500px;
+        height: 500px;
+    }
+    .btn1 {
+        position: absolute;
+        top: 53px;
+    }
+}
+
+@media (min-width:800px) {
+    .text {
+        width: 400px;
+        height: 500px;
+    }
+    .btn1 {
+        position: absolute;
+        top: 52px;
+    }
+}
+
+@media (max-width:800px) {
+    .text {
+        margin: 10px 0;
+        width: 360px;
+        height: 250px;
+    }
+    form {
+        flex-direction: column;
+    }
+    .btn1 {
+        position: absolute;
+        top: 52px;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: blueviolet;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:hover {
+    background-color: brown;
+}
+
+h1 {
+    position: relative;
+    color: #252839;
+    -webkit-text-stroke: 0.1vw #383d52;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+h1::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    animation: animate 7s linear infinite;
+}
+
+@keyframes animate {
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+    40% {
+        width: 60%;
+    }
+    30%,
+    50% {
+        width: 50%;
+    }
+    60%,
+    90% {
+        width: 100%;
+    }
+}
+
+.btn1 {
+    width: 30px;
+    height: 5px;
+    background-color: red;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 53px;
+}
